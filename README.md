@@ -2,8 +2,8 @@ Install eksctl and kubectl
 Please follow this link to config
 some setting
 (Start the workshop and Launch using eksctl)
-
 https://www.eksworkshop.com/
+
 Please replace some content in backend.yaml
 image: ""#"your image link"
 containerPort: 80#image port number
