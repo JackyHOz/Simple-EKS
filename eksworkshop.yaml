@@ -1,0 +1,32 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eksworkshop-eksctl
+  region: us-east-1
+
+availabilityZones: ["us-east-1a","us-east-1b"]
+
+vpc:
+  nat:
+    gateway: Disable
+      
+managedNodeGroups:
+- name: nodegroup
+  desiredCapacity: 1
+  minSize: 1
+  maxSize: 3  
+  instanceType: m5.large
+  privateNetworking: false
+  ssh:
+    allow: true
+  iam:
+    withAddonPolicies:
+      albIngress: true
+# To enable all of the control plane logs, uncomment below:
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["*"]
+
+secretsEncryption:
+  keyARN: ${MASTER_ARN}
