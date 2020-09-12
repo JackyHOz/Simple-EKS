@@ -1,6 +1,5 @@
 Install eksctl and kubectl
-Please follow this link to config
-some setting
+Please follow this link to config some setting
 (Start the workshop and Launch using eksctl)
 https://www.eksworkshop.com/
 
